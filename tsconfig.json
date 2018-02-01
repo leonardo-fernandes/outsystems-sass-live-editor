@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "none",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "preserveConstEnums": true,
+        "outFile": "dist/sass-editor.js",
+        "sourceMap": false,
+        "target": "es6"
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+    ]
+}
