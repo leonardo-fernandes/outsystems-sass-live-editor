@@ -1,26 +1,24 @@
-declare class Sass {
-    constructor();
-}
-
-
+/// <reference path="Workspace.ts" />
+/// <reference path="IStylesheetModel.ts" />
+/// <reference path="LinkedStylesheet.ts" />
 
 
 class DocumentModel {
 
-    private readonly $$: any;
     private readonly $window: any;
     private readonly $document: any;
+    private readonly $$: any;
 
     public readonly workspace: Workspace;
 
     public readonly stylesheets: IStylesheetModel[] = [];
 
 
-    public constructor($: any, $window: any) {
+    public constructor(window: any, $window: any) {
         this.$window = $window;
         this.$document = $window.document;
         this.$$ = $window.$;
-        this.workspace = new Workspace($);
+        this.workspace = new Workspace(window.$);
 
         this.initialize();
     }

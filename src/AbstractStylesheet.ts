@@ -32,6 +32,7 @@ abstract class AbstractStylesheet implements IStylesheetModel {
     public import() {
         /* Create a tab in the workspace */
         this.tab = this.documentModel.workspace.createTab(this);
+        this.documentModel.workspace.appendTab(this.tab);
         this.tab.addClass("loading");
 
         /* Create a <style> element to hold the modified stylesheet */

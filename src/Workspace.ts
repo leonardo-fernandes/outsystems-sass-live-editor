@@ -1,12 +1,13 @@
 class Workspace {
 
-    private $: any;
+    private readonly $: any;
 
-    public code: any;
-    public workspace: any;
-    public template: any;
+    public readonly code: any;
+    public readonly workspace: any;
+    public readonly template: any;
 
     public constructor($: any) {
+        this.$ = $;
         this.code = $(".code-column textarea");
         this.workspace = $(".workspace-column .workspace");
         this.template = this.workspace.find(".stylesheet.client-side-template");
@@ -50,7 +51,9 @@ class Workspace {
         return tab;
     }
 
-
+    public appendTab(tab: any) {
+        this.workspace.append(tab);
+    }
 
     public activateTab(stylesheet: IStylesheetModel, tab: any) {
         this.workspace.find(".stylesheet.active").removeClass("active");
